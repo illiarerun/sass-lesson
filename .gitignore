@@ -1,0 +1,13 @@
+.DS_Store
+.favorites.json
+
+.idea/
+.vscode/
+website.iml
+.fleet
+
+node_modules
+
+dist
+
+.parcel-cache
