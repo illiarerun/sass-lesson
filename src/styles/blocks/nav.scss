@@ -1,0 +1,76 @@
+.nav {
+  $blockName: &;
+
+  &__toggler {
+    display: block;
+    margin: 0 20px;
+    padding: 10px 5px;
+  
+    color: #fff;
+    font-size: 20px;
+  
+    transition: color 0.3s;
+  
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: #1fc8db;
+    }
+    
+    &::before {
+      content: '=';
+    }
+
+    #{$blockName}--open &::before {
+      content: 'x';
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  
+    height: 0;
+    margin: 0 #{-$navLinkPaddingX};
+    padding: 0;
+  
+    list-style: none;
+    overflow: hidden;
+
+    #{$blockName}--open & {
+      height: auto;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      height: auto;
+    }
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+  
+    box-sizing: border-box;
+    height: 50px;
+    padding: 0 $navLinkPaddingX;
+  
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+  
+    transition: color 0.3s;
+
+    &:hover {
+      color: #1fc8db;
+    }
+  }
+}
